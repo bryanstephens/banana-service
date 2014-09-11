@@ -1,0 +1,18 @@
+buildscript {
+    apply from: "gradle/buildscript.gradle", to: buildscript
+}
+
+group = "com.infusionsoft"
+description = "Bananarama - An Infusionsoft MicroApplication"
+
+apply from: "gradle/convention.gradle"
+apply from: "gradle/codequality.gradle"
+apply from: "gradle/release.gradle"
+
+dependencies {
+    compile 'com.infusionsoft.pancakes:infusionsoft-spring-boot-application-web-site'
+    // Easily add Basic Auth using Priscilla configuration
+    //compile 'com.infusionsoft.pancakes:infusionsoft-spring-boot-priscilla-basicauth-autoconfigure'
+
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+}

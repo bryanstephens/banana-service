@@ -1,0 +1,12 @@
+repositories {
+    mavenLocal()
+    maven { url "https://scm.infusiontest.com/nexus/content/groups/infusionsoft" }
+    jcenter()
+    mavenCentral()
+}
+dependencies {
+    classpath "org.springframework.boot:spring-boot-gradle-plugin:1.1.4.RELEASE"
+    classpath "org.flywaydb:flyway-gradle-plugin:3.0"
+    classpath "org.springframework:springloaded:1.2.0.RELEASE"
+    classpath "com.infusionsoft.pancakes:gradle-build-version-plugin:1.0.5-SNAPSHOT"
+}
