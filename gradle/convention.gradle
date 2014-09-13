@@ -17,6 +17,7 @@ buildVersion {
     versionSplitter = "."
     snapshotSuffix = "-BATTER"
     releaseSuffix = ".RELEASE"
+//    pushOnRelease = true
 }
 
 version = buildVersion.version
@@ -24,7 +25,8 @@ version = buildVersion.version
 war {
     manifest {
         attributes("Implementation-Version": project.version)
-        attributes("Pancake-Implementation": "1.0.2.14-SNAPSHOT")
+        attributes("Pancake-Implementation": pancakeVersion)
+        attributes("Build-Timestamp": new Date().toGMTString())
     }
 }
 
@@ -43,7 +45,7 @@ repositories {
 }
 
 dependencies {
-    versionManagement 'com.infusionsoft.pancakes:infusionsoft-platform-bom:1.0.2.14-SNAPSHOT@properties'
+    versionManagement "com.infusionsoft.pancakes:infusionsoft-platform-bom:${pancakeVersion}@properties"
 }
 
 task wrapper(type: Wrapper) {
